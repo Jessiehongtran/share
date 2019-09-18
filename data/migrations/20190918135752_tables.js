@@ -14,6 +14,9 @@ exports.up = function(knex) {
       tbl.string('about');
       tbl.string('purpose');
       tbl.integer('zipcode').unsigned();
+      tbl.float('age');
+      tbl.string('email').unique();
+      tbl.integer('phoneNumber').unique();
       //foreign key
       tbl
         .integer('user_id')

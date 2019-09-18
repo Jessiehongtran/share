@@ -23,19 +23,36 @@ exports.up = function(knex) {
         .inTable('user')
   })
 
-  //share table
-  .createTable('share', tbl => {
+  //category table
+  .createTable('category', tbl => {
       tbl.increments();
-      tbl.string('name').notNullable();
-      tbl.string('why');
-      tbl.string('pick_up').notNullable();
+      tbl.string('category_name').notNullable();
+  })
+
+  //item table
+  .createTable('item', tbl => {
+      tbl.increments();
+      tbl.string('item_name').notNullable();
+      //foreign key
+      tbl
+        .integer('category_id')
+        .unsigned()
+        .notNullable()
+        .references('id')
+        .inTable('category')
+  })
+    
+  //item details table
+  .createTable('item_details', tbl => {
+      tbl.string('description');
+      tbl.string('pickup').notNullable();
       tbl.date('deadline').notNullable();
       tbl.string('rules');
 
   })
 
   //foreign key
-  .createTable('user_share', tbl => {
+  .createTable('user_item', tbl => {
       tbl
         .integer('user_id')
         .unsigned()
@@ -44,20 +61,22 @@ exports.up = function(knex) {
         .inTable('user')
 
       tbl
-        .integer('share_id')
+        .integer('item_id')
         .unsigned()
         .notNullable()
         .references('id')
-        .inTable('share')
+        .inTable('item')
 
-      tbl.primary(['user_id', 'share_id'])
+      tbl.primary(['user_id', 'item_id'])
   })
 };
 
 exports.down = function(knex) {
   return knex.schema
-                .dropTableIfExists('user_share')
-                .dropTableIfExists('share')
+                .dropTableIfExists('user_item')
+                .dropTableIfExists('item_details')
+                .dropTableIfExists('item')
+                .dropTableIfExists('category')
                 .dropTableIfExists('user_profile')
                 .dropTableIfExists('user')
 };

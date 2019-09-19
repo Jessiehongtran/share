@@ -10,7 +10,7 @@ exports.seed = function(knex) {
           zipcode: "95123",
           age: 34,
           email: "abc@gmail.com",
-          phoneNumber: 774-290-3801,
+          phoneNumber: 7742903801,
           user_id: 1
         }
       ]);

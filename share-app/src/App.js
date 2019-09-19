@@ -2,6 +2,7 @@ import React from 'react';
 import Login from './components/login'
 import {Route} from 'react-router-dom'
 import CreateProfile from './components/createProfile'
+import './App.css'
 
 function App() {
   return (

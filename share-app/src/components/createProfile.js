@@ -65,6 +65,7 @@ const CreateProfile = () => {
                     onChange={handleChange}
                 />
             </label>
+            <button>Create Profile</button>
         </form>
     )
 }

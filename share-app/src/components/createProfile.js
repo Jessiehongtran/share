@@ -11,48 +11,60 @@ const CreateProfile = () => {
     }
     return (
         <form onSubmit = {handleSubmit}>
-            <input
-                type="text"
-                name="about"
-                placeholder ="I am..."
-                value={profile.about}
-                onChange={handleChange}
-            />
-            <input
-                type="text"
-                name="purpose"
-                placeholder ="I am here to..."
-                value={profile.purpose}
-                onChange={handleChange}
-            />
-            <input
-                type="number"
-                name="zipcode"
-                placeholder ="95123"
-                value={profile.zipcode}
-                onChange={handleChange}
-            />
-            <input
-                type="number"
-                name="age"
-                placeholder ="28"
-                value={profile.age}
-                onChange={handleChange}
-            />
-            <input
-                type="email"
-                name="email"
-                placeholder ="abc@gmail.com"
-                value={profile.email}
-                onChange={handleChange}
-            />
-            <input
-                type="number"
-                name="phoneNumber"
-                placeholder ="7742903801"
-                value={profile.phoneNumber}
-                onChange={handleChange}
-            />
+            <label>Introduce yourself
+                <input
+                    type="text"
+                    name="about"
+                    placeholder ="I am..."
+                    value={profile.about}
+                    onChange={handleChange}
+                />
+            </label>
+            <label>Why are you here?
+                <input
+                    type="text"
+                    name="purpose"
+                    placeholder ="I am here to..."
+                    value={profile.purpose}
+                    onChange={handleChange}
+                />
+            </label>
+            <label>Your zipcode
+                <input
+                    type="number"
+                    name="zipcode"
+                    placeholder ="95123"
+                    value={profile.zipcode}
+                    onChange={handleChange}
+                />
+            </label>
+            <label>Your age
+                <input
+                    type="number"
+                    name="age"
+                    placeholder ="28"
+                    value={profile.age}
+                    onChange={handleChange}
+                />
+            </label>
+            <label>Your email
+                <input
+                    type="email"
+                    name="email"
+                    placeholder ="abc@gmail.com"
+                    value={profile.email}
+                    onChange={handleChange}
+                />
+            </label>
+            <label> Your phone number
+                <input
+                    type="number"
+                    name="phoneNumber"
+                    placeholder ="7742903801"
+                    value={profile.phoneNumber}
+                    onChange={handleChange}
+                />
+            </label>
         </form>
     )
 }

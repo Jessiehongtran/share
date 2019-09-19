@@ -7,7 +7,9 @@ const ChooseCategory = props => {
     return (
         <div>
             <h2>Okay, what do you want to share today?</h2>
-            <div>{CategoryList.map(cate => <CategoryButton key={cate} cate={cate} history={props.history} />)}</div>
+            <div>{CategoryList.map(cate => 
+                <CategoryButton key={cate} cate={cate} history={props.history} />)}
+            </div>
         </div>
     )
 }

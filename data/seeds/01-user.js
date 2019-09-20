@@ -6,10 +6,10 @@ exports.seed = function(knex) {
       return knex('user').insert([
         {
           username: "user",
-          password: bcrypt.hashSync("pass", 12)
+          password: "aaa"
         },{
           username: "hong",
-          password: bcrypt.hashSync("pass", 12)
+          password: "bbb"
         }
       ]);
     });

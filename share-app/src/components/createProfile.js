@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import axios from 'axios'
 
 const CreateProfile = () => {
     const [profile, setProfile] = useState({about: "", purpose: "", zipcode: "", age: "", email: "", phoneNumber: ""})
@@ -8,6 +9,11 @@ const CreateProfile = () => {
     const handleSubmit = e => {
         e.preventDefault();
         console.log(profile)
+        axios
+            .post('http://localhost:3300/api/users/profile', profile)
+            .then(res => console.log(res)
+                )
+            .catch(err => console.log(err))
     }
     return (
         <form onSubmit = {handleSubmit}>

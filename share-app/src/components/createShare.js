@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import ShareFeed from './shareFeed'
 
 const CreateShare = props => {
     const [item, setItem] = useState({})

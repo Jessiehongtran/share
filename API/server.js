@@ -2,8 +2,10 @@ const express = require('express');
 const helmet = require('helmet');
 const server = express();
 const db = require('../users/user-model')
+var cors = require('cors');
 
 server.use(helmet());
+server.use(cors());
 server.use(express.json());
 
 server.get('/test', (req,res) => { 
@@ -33,6 +35,17 @@ server.post('/api/users', (req,res)=> {
             res.status(500).json(err)
         })
 })
+
+// Handle CORS
+// server.use((req, res, next) => {
+//     res.header("Access-Control-Allow-Origin", "*");
+//     res.header("Access-Control-Allow-Headers", "*");
+//     if (req.method === "OPTIONS") {
+//       res.header("Access-Control-Allow-Methods", "POST");
+//       return res.status(200).json({});
+//     }
+//     next();
+//   });
 
 //POST user profile
 server.post('/api/users/profile', (req,res) => {

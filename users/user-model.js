@@ -6,8 +6,11 @@ module.exports = {
     findUser,
     createProfile,
     // updateProfile, 
+    getCategory,
+    addCategory,
     getShares,
-    addShare
+    addShare,
+    //updateShare
     
 }
 
@@ -63,4 +66,13 @@ function addShare(share){
                .insert(item_details)
                .then(ids => ({id: ids[0]}))
             })
+}
+
+function getCategory(){
+    return db('category')
+
+}
+
+function addCategory(){
+    
 }

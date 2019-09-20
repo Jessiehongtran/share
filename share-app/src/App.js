@@ -12,6 +12,7 @@ import './App.css'
 function App() {
   const [id, setId] = useState('')
   const [shareList, setShareList] = useState([])
+  const [categoryList, setCategoryList] = useState([])
   console.log('id in App',id)
   
   return (
@@ -26,7 +27,10 @@ function App() {
         render={props => {
           return <CreateProfile {...props} id={id}/>
         }} />
-      <Route path='/category' component={ChooseCategory} />
+      <Route path='/category' 
+        render={props => {
+          return <ChooseCategory {...props} setCategoryList={setCategoryList} categoryList={categoryList}/>
+        }}/>
       <Route path='/addCategory' component={AddCategory} />
       <Route path='/createShare' component={CreateShare} />
       <Route path='/shareFeed'

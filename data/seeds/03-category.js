@@ -4,7 +4,6 @@ exports.seed = function(knex) {
     .then(function () {
       // Inserts seed entries
       return knex('category').insert([
-        {category_name: "book"},
         {category_name: 'A book'},
         {category_name:'A ride'},
         {category_name:'An idea'},

@@ -5,6 +5,7 @@ const helmet = require('helmet');
 const server = express();
 const db = require('../users/user-model')
 const secrets = require('../secrets/secret')
+const authenticate = require('../middleware/authenticate-middleware')
 var cors = require('cors');
 
 server.use(helmet());
@@ -88,7 +89,13 @@ server.post('/api/users/profile', (req,res) => {
         })
 })
 
+//Test authenticate
+server.get('/testnew', authenticate, (req,res)=> {
+    res.json({message: 'got in'})
+})
 
+//POST a share
+//remember to add authenticate 
 
 module.exports = server;
 

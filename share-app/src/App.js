@@ -11,6 +11,7 @@ import './App.css'
 
 function App() {
   const [id, setId] = useState('')
+  const [shareList, setShareList] = useState([])
   console.log('id in App',id)
   
   return (
@@ -28,7 +29,10 @@ function App() {
       <Route path='/category' component={ChooseCategory} />
       <Route path='/addCategory' component={AddCategory} />
       <Route path='/createShare' component={CreateShare} />
-      <Route path='/shareFeed' component={ShareFeed} />
+      <Route path='/shareFeed'
+        render={props => {
+          return <ShareFeed {...props} setShareList={setShareList} shareList={shareList}/>
+        }} />
     </div>
   );
 }

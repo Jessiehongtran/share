@@ -96,7 +96,16 @@ server.get('/testnew', authenticate, (req,res)=> {
 
 //POST a share
 //remember to add authenticate 
-
+server.post('/api/shares', (req,res) => {
+    const newShare = req.body
+    db.addShare(newShare)
+        .then(share => {
+            res.status(200).json(share)
+        })
+        .catch(err => {
+            res.status(500).json(err)
+        })
+})
 
 //GET SHARES
 server.get('/api/shares', (req,res)=> {

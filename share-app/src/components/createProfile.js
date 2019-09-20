@@ -1,16 +1,18 @@
 import React, {useState} from 'react';
 import axios from 'axios'
 
-const CreateProfile = () => {
+const CreateProfile = props => {
+    console.log('props in CreateProfile', props)
     const [profile, setProfile] = useState({about: "", purpose: "", zipcode: "", age: "", email: "", phoneNumber: ""})
     const handleChange = e => {
         setProfile({...profile, [e.target.name]: e.target.value})
     }
     const handleSubmit = e => {
         e.preventDefault();
+        profile.user_id = props.id
         console.log(profile)
         axios
-            .post('http://localhost:3300/api/users/profile', profile)
+            .post('https://share-h.herokuapp.com/api/users/profile', profile)
             .then(res => console.log(res)
                 )
             .catch(err => console.log(err))

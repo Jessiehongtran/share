@@ -49,6 +49,7 @@ exports.up = function(knex) {
   .createTable('item_details', tbl => {
       tbl.string('description');
       tbl.string('pickup').notNullable();
+      tbl.string('target')
       tbl.date('deadline').notNullable();
       tbl.string('rules');
 

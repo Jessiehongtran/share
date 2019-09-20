@@ -2,8 +2,8 @@ const db = require('../data/dbConfig')
 
 module.exports = {
     getUsers,
-    // addUser,
-    // createProfile,
+    addUser,
+    createProfile,
     // updateProfile, 
     
 }
@@ -15,3 +15,15 @@ function getUsers(){
             
 }
 
+function addUser(user){
+    console.log(user)
+    return db('user')
+            .insert(user)
+            .then(ids => ({id: ids[0]}))
+}
+
+function createProfile(profile){
+    return db('user_profile')
+            .insert(profile)
+            .then(ids => ({id: ids[0]}))
+}

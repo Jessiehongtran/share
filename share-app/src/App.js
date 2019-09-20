@@ -5,6 +5,7 @@ import CreateProfile from './components/createProfile'
 import ChooseCategory from './components/chooseCate'
 import AddCategory from './components/addCategory'
 import CreateShare from './components/createShare'
+import ShareFeed from './components/shareFeed'
 import './App.css'
 
 function App() {
@@ -16,7 +17,7 @@ function App() {
       <Route path='/category' component={ChooseCategory} />
       <Route path='/addCategory' component={AddCategory} />
       <Route path='/createShare' component={CreateShare} />
-
+      <Route path='/shareFeed' component={ShareFeed} />
     </div>
   );
 }

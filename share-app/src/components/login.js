@@ -19,7 +19,7 @@ const Login = (props) => {
                 props.history.push('/createprofile')
             })
             .catch(err => {
-                console.log('Fail to submit user to server')
+                console.log(err)
             })
     }
     return (

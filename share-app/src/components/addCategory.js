@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {CategoryList} from '../data/CategoryList'
 
 const AddCategory = props => {
-    const [category, setCategory] = useState({newCategory: ""})
+    const [category, setCategory] = useState({caterory_name: ""})
 
     const handleChange = e => {
         setCategory({...category, [e.target.name]: e.target.value})
@@ -11,7 +11,7 @@ const AddCategory = props => {
     const handleSubmit = e => {
         e.preventDefault();
         console.log(category)
-        CategoryList.push(category.newCategory)
+        CategoryList.push(category.category_name)
         console.log(CategoryList)
         //post to API
 
@@ -25,8 +25,8 @@ const AddCategory = props => {
                 <input 
                     className="addCate"
                     type="text"
-                    name="newCategory"
-                    value={category.newCategory}
+                    name="category_name"
+                    value={category.category_name}
                     onChange={handleChange}
                 />
                 <button>Add</button>

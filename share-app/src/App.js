@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import SignUp from './components/signUp'
 import Login from './components/login'
 import {Route} from 'react-router-dom'
 import CreateProfile from './components/createProfile'
@@ -15,6 +16,7 @@ function App() {
   return (
     <div className="App">
       <h1>Share</h1>
+      <Route path='/register' component = {SignUp}/>
       <Route path='/login' 
         render={props => {
           return <Login {...props} setId={setId} />

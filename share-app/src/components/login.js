@@ -13,7 +13,7 @@ const Login = (props) => {
         event.preventDefault();
         console.log(user)
         axios
-            .post('https://share-h.herokuapp.com/api/users', user)
+            .post('https://share-h.herokuapp.com/api/users/login', user)
             .then(res => {
                 props.setId(res.data.id)
                 props.history.push('/createprofile')

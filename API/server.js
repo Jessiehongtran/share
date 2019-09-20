@@ -23,8 +23,8 @@ server.get('/api/users', (req,res) => {
         })
 })
 
-//POST users
-server.post('/api/users', (req,res)=> {
+//POST users for Login
+server.post('/api/users/signup', (req,res)=> {
     const userData = req.body
     console.log(userData)
     db.addUser(userData)
@@ -35,6 +35,19 @@ server.post('/api/users', (req,res)=> {
             res.status(500).json(err)
         })
 })
+
+//POST users for Login
+// server.post('/api/users/login', (req,res)=> {
+//     const userData = req.body
+//     console.log(userData)
+//     db.addUser(userData)
+//         .then(user => {
+//             res.status(201).json(user);
+//         })
+//         .catch(err => {
+//             res.status(500).json(err)
+//         })
+// })
 
 
 //POST user profile

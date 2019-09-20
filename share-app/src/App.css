@@ -34,3 +34,12 @@ input{
 .addCate{
   width: 40%;
 }
+
+.share-card{
+  border: grey solid 2px;
+  margin: 0 30px 0 30px;
+}
+
+.share-text{
+  color: grey
+}

@@ -6,7 +6,11 @@ module.exports = {
     findUser,
     createProfile,
     // updateProfile, 
-    getShares
+    getCategory,
+    addCategory,
+    getShares,
+    addShare,
+    //updateShare
     
 }
 
@@ -43,4 +47,32 @@ function getShares(){
             .select('user.username')
             .join('category', 'category.id', 'item.category_id')
             .select('category.category_name')
+}
+
+function addShare(share){
+    const item_name = share.item_name;
+    const item_details = {
+        description: share.description,
+        target: share.target,
+        pickup: share.pickup,
+        deadline: share.deadline,
+        rules: share.rules
+    }
+    return db('item')
+           .insert(item_name)
+           .then(ids => {
+               ({id: ids[0]})
+               db('item_details')
+               .insert(item_details)
+               .then(ids => ({id: ids[0]}))
+            })
+}
+
+function getCategory(){
+    return db('category')
+
+}
+
+function addCategory(){
+    
 }

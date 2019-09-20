@@ -41,4 +41,6 @@ function getShares(){
             .join('user_item', 'item.id', 'user_item.item_id')
             .join('user', 'user.id', 'user_item.user_id')
             .select('user.username')
+            .join('category', 'category.id', 'item.category_id')
+            .select('category.category_name')
 }

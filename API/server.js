@@ -23,8 +23,8 @@ server.get('/api/users', (req,res) => {
         })
 })
 
-//POST users
-server.post('/api/users', (req,res)=> {
+//POST users for Login
+server.post('/api/users/signup', (req,res)=> {
     const userData = req.body
     console.log(userData)
     db.addUser(userData)
@@ -36,16 +36,19 @@ server.post('/api/users', (req,res)=> {
         })
 })
 
-// Handle CORS
-// server.use((req, res, next) => {
-//     res.header("Access-Control-Allow-Origin", "*");
-//     res.header("Access-Control-Allow-Headers", "*");
-//     if (req.method === "OPTIONS") {
-//       res.header("Access-Control-Allow-Methods", "POST");
-//       return res.status(200).json({});
-//     }
-//     next();
-//   });
+//POST users for Login
+// server.post('/api/users/login', (req,res)=> {
+//     const userData = req.body
+//     console.log(userData)
+//     db.addUser(userData)
+//         .then(user => {
+//             res.status(201).json(user);
+//         })
+//         .catch(err => {
+//             res.status(500).json(err)
+//         })
+// })
+
 
 //POST user profile
 server.post('/api/users/profile', (req,res) => {

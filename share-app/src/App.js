@@ -1,4 +1,5 @@
-import React from 'react';
+import React, {useState} from 'react';
+import SignUp from './components/signUp'
 import Login from './components/login'
 import {Route} from 'react-router-dom'
 import CreateProfile from './components/createProfile'
@@ -9,11 +10,21 @@ import ShareFeed from './components/shareFeed'
 import './App.css'
 
 function App() {
+  const [id, setId] = useState('')
+  console.log('id in App',id)
+  
   return (
     <div className="App">
       <h1>Share</h1>
-      <Route path='/login' component={Login} />
-      <Route path='/createprofile' component={CreateProfile} />
+      <Route path='/register' component = {SignUp}/>
+      <Route path='/login' 
+        render={props => {
+          return <Login {...props} setId={setId} />
+        }}/>
+      <Route path='/createprofile' 
+        render={props => {
+          return <CreateProfile {...props} id={id}/>
+        }} />
       <Route path='/category' component={ChooseCategory} />
       <Route path='/addCategory' component={AddCategory} />
       <Route path='/createShare' component={CreateShare} />

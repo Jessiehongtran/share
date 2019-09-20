@@ -73,6 +73,8 @@ function getCategory(){
 
 }
 
-function addCategory(){
-    
+function addCategory(cate){
+    return db('category')
+            .insert(cate)
+            .then(ids => ({id: ids[0]}))
 }

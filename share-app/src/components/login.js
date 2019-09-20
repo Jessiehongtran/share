@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
-import axios from 'axios'
+import axios from 'axios';
+import {Link} from 'react-router-dom'
 
 const Login = (props) => {
     console.log('props in Login', props)
@@ -45,6 +46,7 @@ const Login = (props) => {
                     />
                 </label>
                 <button type="submit">Log In</button>
+                <Link to='/register'>New user?</Link>
             </form>
         </div>
     )

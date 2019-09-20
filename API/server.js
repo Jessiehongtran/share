@@ -106,7 +106,16 @@ server.get('/api/category', (req,res) => {
 })
 
 //POST a category
-
+server.post('/api/category', (req,res)=> {
+    const newCate = req.body
+    db.addCategory(newCate)
+        .then(id => {
+            res.status(200).json(id)
+        })
+        .catch(err => {
+            res.status(500).json(err)
+        })
+})
 
 
 //POST a share

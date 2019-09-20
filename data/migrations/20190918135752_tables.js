@@ -52,6 +52,13 @@ exports.up = function(knex) {
       tbl.string('target')
       tbl.date('deadline').notNullable();
       tbl.string('rules');
+      //foreign key
+      tbl
+        .integer('item_id')
+        .unsigned()
+        .notNullable()
+        .references('id')
+        .inTable('item')
 
   })
 

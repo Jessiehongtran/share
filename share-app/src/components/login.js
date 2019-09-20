@@ -17,7 +17,7 @@ const Login = (props) => {
             .post('https://share-h.herokuapp.com/api/users/login', user)
             .then(res => {
                 props.setId(res.data.id)
-                props.history.push('/createprofile')
+                props.history.push('/shareFeed')
             })
             .catch(err => {
                 console.log(err)

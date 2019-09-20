@@ -6,6 +6,7 @@ module.exports = {
     findUser,
     createProfile,
     // updateProfile, 
+    getShares
     
 }
 
@@ -31,4 +32,13 @@ function createProfile(profile){
     return db('user_profile')
             .insert(profile)
             .then(ids => ({id: ids[0]}))
+}
+
+function getShares(){
+    return db('item')
+            .join('item_details', 'item.id', 'item_details.item_id')
+            .select('item_name', 'item_details.pickup', 'item_details.deadline', 'item_details.target' )
+            .join('user_item', 'item.id', 'user_item.item_id')
+            .join('user', 'user.id', 'user_item.user_id')
+            .select('user.username')
 }

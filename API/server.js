@@ -97,6 +97,18 @@ server.get('/testnew', authenticate, (req,res)=> {
 //POST a share
 //remember to add authenticate 
 
+
+//GET SHARES
+server.get('/api/shares', (req,res)=> {
+    db.getShares()
+        .then(shares => {
+            res.status(200).json(shares)
+        })
+        .catch(err => {
+            res.status(500).json(err)
+        })
+})
+
 module.exports = server;
 
 

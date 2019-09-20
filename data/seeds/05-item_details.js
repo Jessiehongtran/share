@@ -10,7 +10,8 @@ exports.seed = function(knex) {
           //add target
           target: "Mom",
           deadline: 2019-10-01,
-          rules: "contact via phone please"
+          rules: "contact via phone please",
+          item_id: 1
         }
       ]);
     });

@@ -10,10 +10,12 @@ import ShareFeed from './components/shareFeed'
 import './App.css'
 
 function App() {
-  const [id, setId] = useState('')
+  const [id, setId] = useState('') //user_id
+  console.log('user_id in App',id)
   const [shareList, setShareList] = useState([])
   const [categoryList, setCategoryList] = useState([])
-  console.log('id in App',id)
+  // const [categoryId, setCategoryId] = useState('')
+  // console.log('category_id', categoryId)
   
   return (
     <div className="App">
@@ -29,7 +31,12 @@ function App() {
         }} />
       <Route path='/category' 
         render={props => {
-          return <ChooseCategory {...props} setCategoryList={setCategoryList} categoryList={categoryList}/>
+          return <ChooseCategory {...props} 
+          setCategoryList={setCategoryList} 
+          categoryList={categoryList}
+          // categoryId = {categoryId}
+          // setCategoryId = {setCategoryId}
+          />
         }}/>
       <Route path='/addCategory' component={AddCategory} />
       <Route path='/createShare' component={CreateShare} />

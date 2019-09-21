@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import {CategoryList} from '../data/CategoryList'
 import axios from 'axios';
 
 const AddCategory = props => {

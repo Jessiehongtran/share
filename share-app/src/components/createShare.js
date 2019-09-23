@@ -1,7 +1,9 @@
 import React, {useState} from 'react';
 import ShareFeed from './shareFeed'
+import axios from 'axios'
 
 const CreateShare = props => {
+    console.log('props in CreateShare', props)
     const [item, setItem] = useState({})
 
     const handleChange = e => {
@@ -13,6 +15,16 @@ const CreateShare = props => {
         console.log(item)
         //push item_name to an API
         //push the rest to another API
+        item.category_id=props.categoryId
+        axios
+            .post('https://share-h.herokuapp.com/api/shares', item)
+            .then(res => {
+                console.log('res in CreateShare', res.data)
+                
+            })
+            .catch(err => {
+                console.log(err)
+            })
 
         //push to shareFeed
         props.history.push('/shareFeed')

@@ -122,6 +122,7 @@ server.post('/api/category', (req,res)=> {
 //remember to add authenticate 
 server.post('/api/shares', (req,res) => {
     const newShare = req.body
+    console.log('newShare',newShare)
     db.addShare(newShare)
         .then(share => {
             res.status(200).json(share)

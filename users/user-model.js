@@ -50,16 +50,22 @@ function getShares(){
 }
 
 function addShare(share){
-    const item_name = share.item_name;
+    const item = {
+        item_name: share.item_name,
+        category_id: share.category_id
+    };
+    console.log('item', item)
     const item_details = {
         description: share.description,
-        target: share.target,
         pickup: share.pickup,
+        target: share.target,
         deadline: share.deadline,
-        rules: share.rules
+        rules: share.rules,
+        item_id: share.id
     }
+    console.log('item_details', item_details)
     return db('item')
-           .insert(item_name)
+           .insert(item)
            .then(ids => {
                ({id: ids[0]})
                db('item_details')

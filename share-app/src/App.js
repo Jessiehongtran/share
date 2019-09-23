@@ -14,16 +14,23 @@ function App() {
   console.log('user_id in App',id)
   const [shareList, setShareList] = useState([])
   const [categoryList, setCategoryList] = useState([])
-  // const [categoryId, setCategoryId] = useState('')
-  // console.log('category_id', categoryId)
+  const [categoryId, setCategoryId] = useState('')
+  console.log('category_id', categoryId)
   
+  //button Want to share something should be in App component cause it can't be in shareFeed, 
+  //then it should be linked to /category
+  
+  //if shareFeed's router is set '/' as default, there should be authentication on the server
   return (
     <div className="App">
       <h1>Share</h1>
-      <Route path='/register' component = {SignUp}/>
-      <Route path='/login' 
+      <Route path='/register' 
+      render={props => {
+        return <SignUp {...props} setId={setId} />
+      }}/>
+      <Route exact path='/login' 
         render={props => {
-          return <Login {...props} setId={setId} />
+          return <Login {...props} />
         }}/>
       <Route path='/createprofile' 
         render={props => {
@@ -34,15 +41,20 @@ function App() {
           return <ChooseCategory {...props} 
           setCategoryList={setCategoryList} 
           categoryList={categoryList}
-          // categoryId = {categoryId}
-          // setCategoryId = {setCategoryId}
+          categoryId = {categoryId}
+          setCategoryId = {setCategoryId}
           />
         }}/>
       <Route path='/addCategory' component={AddCategory} />
-      <Route path='/createShare' component={CreateShare} />
+      <Route path='/createShare' 
+        render={props => {
+          return <CreateShare {...props} categoryId={categoryId}/>
+        }} />
       <Route path='/shareFeed'
         render={props => {
-          return <ShareFeed {...props} setShareList={setShareList} shareList={shareList}/>
+          return <ShareFeed {...props} 
+          setShareList={setShareList} 
+          shareList={shareList}/>
         }} />
     </div>
   );

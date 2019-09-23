@@ -21,7 +21,14 @@ const ChooseCategory = props => {
         <div>
             <h2>Okay, what do you want to share today?</h2>
             <div>{props.categoryList.map(cate => 
-                <CategoryButton key={cate.id} cate={cate.category_name} history={props.history} />)}
+                <CategoryButton 
+                key={cate.id} 
+                cate={cate.category_name} 
+                history={props.history} 
+                cate_id = {cate.id}
+                categoryId = {props.categoryId}
+                setCategoryId = {props.setCategoryId}
+                />)}
             </div>
         </div>
     )

@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import ShareCard from './shareCard'
+import {Link} from 'react-router-dom'
 
 const ShareFeed = props => {
     console.log('props in ShareFeed', props)
@@ -23,6 +24,7 @@ const ShareFeed = props => {
 
     return (
         <div>
+        <Link to='/category'><button>Want to share something?</button></Link>
         {props.shareList.map(share => <ShareCard key={share} share={share}/>)}
         </div>
     )

@@ -19,7 +19,7 @@ const CreateShare = props => {
         axios
             .post('https://share-h.herokuapp.com/api/shares', item)
             .then(res => {
-                console.log('res in CreateShare', res.data)
+                console.log('res in CreateShare', res)
                 
             })
             .catch(err => {

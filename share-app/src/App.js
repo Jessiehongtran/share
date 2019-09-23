@@ -17,9 +17,6 @@ function App() {
   const [categoryId, setCategoryId] = useState('')
   console.log('category_id', categoryId)
   
-  //button Want to share something should be in App component cause it can't be in shareFeed, 
-  //then it should be linked to /category
-  
   //if shareFeed's router is set '/' as default, there should be authentication on the server
   return (
     <div className="App">
@@ -45,7 +42,8 @@ function App() {
           setCategoryId = {setCategoryId}
           />
         }}/>
-      <Route path='/addCategory' component={AddCategory} />
+      <Route path='/addCategory' 
+        component={AddCategory} />
       <Route path='/createShare' 
         render={props => {
           return <CreateShare {...props} categoryId={categoryId}/>

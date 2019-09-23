@@ -36,6 +36,11 @@ exports.up = function(knex) {
   .createTable('item', tbl => {
       tbl.increments();
       tbl.string('item_name').notNullable();
+      tbl.string('description');
+      tbl.string('pickup').notNullable();
+      tbl.string('target')
+      tbl.date('deadline').notNullable();
+      tbl.string('rules');
       //foreign key
       tbl
         .integer('category_id')
@@ -45,22 +50,22 @@ exports.up = function(knex) {
         .inTable('category')
   })
     
-  //item details table
-  .createTable('item_details', tbl => {
-      tbl.string('description');
-      tbl.string('pickup').notNullable();
-      tbl.string('target')
-      tbl.date('deadline').notNullable();
-      tbl.string('rules');
-      //foreign key
-      tbl
-        .integer('item_id')
-        .unsigned()
-        .notNullable()
-        .references('id')
-        .inTable('item')
+  // //item details table
+  // .createTable('item_details', tbl => {
+  //     tbl.string('description');
+  //     tbl.string('pickup').notNullable();
+  //     tbl.string('target')
+  //     tbl.date('deadline').notNullable();
+  //     tbl.string('rules');
+  //     //foreign key
+  //     tbl
+  //       .integer('item_id')
+  //       .unsigned()
+  //       .notNullable()
+  //       .references('id')
+  //       .inTable('item')
 
-  })
+  // })
 
   //foreign key
   .createTable('user_item', tbl => {

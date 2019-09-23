@@ -49,28 +49,28 @@ function getShares(){
             .select('category.category_name')
 }
 
-function addShare(share){
-    const item = {
-        item_name: share.item_name,
-        category_id: share.category_id
-    };
-    console.log('item', item)
-    const item_details = {
-        description: share.description,
-        pickup: share.pickup,
-        target: share.target,
-        deadline: share.deadline,
-        rules: share.rules,
-        item_id: share.id
-    }
-    console.log('item_details', item_details)
+function addShare(item){
+    // const item = {
+    //     item_name: share.item_name,
+    //     category_id: share.category_id
+    // };
+    // console.log('item', item)
+    // const item_details = {
+    //     description: share.description,
+    //     pickup: share.pickup,
+    //     target: share.target,
+    //     deadline: share.deadline,
+    //     rules: share.rules,
+    //     item_id: item.id
+    // }
+    // console.log('item_details', item_details)
     return db('item')
            .insert(item)
            .then(ids => {
                ({id: ids[0]})
-               db('item_details')
-               .insert(item_details)
-               .then(ids => ({id: ids[0]}))
+            //    db('item_details')
+            //    .insert(item_details)
+            //    .then(ids => ({id: ids[0]}))
             })
 }
 

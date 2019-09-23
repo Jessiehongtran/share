@@ -2,6 +2,9 @@ import React, {useState} from 'react';
 import axios from 'axios';
 import {Link} from 'react-router-dom'
 
+//1.Login needs validation, needs to be transformed to Formik
+//2.Currently id is being grabbed at SignUp, what if people just login, how to store the id in the localstorage 
+//or somewhere that it's always being grabbed if a user gets in
 const Login = (props) => {
     console.log('props in Login', props)
     const [user,setUser] = useState({username: "", password: ""})
@@ -16,8 +19,9 @@ const Login = (props) => {
         axios
             .post('https://share-h.herokuapp.com/api/users/login', user)
             .then(res => {
-                props.setId(res.data.id)
-                props.history.push('/shareFeed')
+               
+                console.log(res.data)
+                props.history.push('/createProfile')
             })
             .catch(err => {
                 console.log(err)

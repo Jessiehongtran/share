@@ -7,7 +7,11 @@ const CategoryButton = props => {
             <button onClick={click => 
             {console.log('check', props.cate)
                 if(props.cate === 'Others'){props.history.push('/addCategory')} 
-                else props.history.push('/createShare')}}>
+                else {
+                    props.setCategoryId(props.cate_id)
+                    props.history.push('/createShare')
+                }
+                }}>
                 {props.cate}
             </button>
         </div>

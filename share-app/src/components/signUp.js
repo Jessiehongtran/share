@@ -14,7 +14,10 @@ const SignUp = props => {
         axios
             .post('https://share-h.herokuapp.com/api/users/signup', person)
             .then(res => {
-                props.history.push('/createprofile')
+                props.setId(res.data.id)
+                props.history.push('/login')
+                console.log('res in SignUp', res.data)
+                
             })
             .catch(err => {
                 console.log(err)

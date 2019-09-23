@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
-import {CategoryList} from '../data/CategoryList'
+import axios from 'axios';
 
 const AddCategory = props => {
-    const [category, setCategory] = useState({caterory_name: ""})
+    const [category, setCategory] = useState({})
 
     const handleChange = e => {
         setCategory({...category, [e.target.name]: e.target.value})
@@ -11,11 +11,12 @@ const AddCategory = props => {
     const handleSubmit = e => {
         e.preventDefault();
         console.log(category)
-        CategoryList.push(category.category_name)
-        console.log(CategoryList)
-        //post to API
-
-        //push to createShare
+        axios
+            .post('https://share-h.herokuapp.com/api/category', category)
+            .then(res => {
+                console.log(res.data)
+            })
+            .catch(err => console.log(err))
         props.history.push('/createShare')
     }
     return (

@@ -27,7 +27,7 @@ server.get('/api/users', (req,res) => {
         })
 })
 
-//POST users for Login
+//POST users for SignUp
 server.post('/api/users/signup', (req,res)=> {
     const userData = req.body;
     console.log(userData)

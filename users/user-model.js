@@ -49,12 +49,17 @@ function getShares(){
             .select('category.category_name')
 }
 
-function addShare(item){
-    // const item = {
-    //     item_name: share.item_name,
-    //     category_id: share.category_id
-    // };
-    // console.log('item', item)
+function addShare(share){
+    const item = {
+        item_name: share.item_name,
+        description: share.description,
+        pickup: share.pickup,
+        target: share.target,
+        deadline: share.deadline,
+        rules: share.rules,
+        category_id: share.category_id
+    };
+    console.log('item', item)
     // const item_details = {
     //     description: share.description,
     //     pickup: share.pickup,

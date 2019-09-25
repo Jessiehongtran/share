@@ -19,9 +19,10 @@ const Login = (props) => {
         axios
             .post('https://share-h.herokuapp.com/api/users/login', user)
             .then(res => {
-               
+                localStorage.setItem('token', res.data.token)
                 console.log(res.data)
-                props.history.push('/createProfile')
+                localStorage.setItem('userId', res.data.user.id)
+                props.history.push('/')
             })
             .catch(err => {
                 console.log(err)

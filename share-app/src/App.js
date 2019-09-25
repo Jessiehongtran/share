@@ -10,8 +10,6 @@ import ShareFeed from './components/shareFeed'
 import './App.css'
 
 function App() {
-  const [id, setId] = useState('') //user_id
-  console.log('user_id in App',id)
   const [shareList, setShareList] = useState([])
   const [categoryList, setCategoryList] = useState([])
   const [categoryId, setCategoryId] = useState('')
@@ -21,17 +19,17 @@ function App() {
   return (
     <div className="App">
       <h1>Share</h1>
-      <Route exact path='/register' 
+      <Route exact path='/signUp' 
       render={props => {
-        return <SignUp {...props} setId={setId} />
+        return <SignUp {...props}/>
       }}/>
       <Route exact path='/login' 
         render={props => {
           return <Login {...props} />
         }}/>
-      <Route exact path='/createprofile' 
+      <Route exact path='/createProfile' 
         render={props => {
-          return <CreateProfile {...props} id={id}/>
+          return <CreateProfile {...props}/>
         }} />
       <Route exact path='/category' 
         render={props => {

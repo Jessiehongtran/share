@@ -21,7 +21,7 @@ function App() {
   return (
     <div className="App">
       <h1>Share</h1>
-      <Route path='/register' 
+      <Route exact path='/register' 
       render={props => {
         return <SignUp {...props} setId={setId} />
       }}/>
@@ -29,11 +29,11 @@ function App() {
         render={props => {
           return <Login {...props} />
         }}/>
-      <Route path='/createprofile' 
+      <Route exact path='/createprofile' 
         render={props => {
           return <CreateProfile {...props} id={id}/>
         }} />
-      <Route path='/category' 
+      <Route exact path='/category' 
         render={props => {
           return <ChooseCategory {...props} 
           setCategoryList={setCategoryList} 
@@ -42,13 +42,13 @@ function App() {
           setCategoryId = {setCategoryId}
           />
         }}/>
-      <Route path='/addCategory' 
+      <Route exact path='/addCategory' 
         component={AddCategory} />
       <Route path='/createShare' 
         render={props => {
           return <CreateShare {...props} categoryId={categoryId}/>
         }} />
-      <Route path='/'
+      <Route exact path='/'
         render={props => {
           return <ShareFeed {...props} 
           setShareList={setShareList} 

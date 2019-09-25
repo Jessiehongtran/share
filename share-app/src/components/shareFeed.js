@@ -20,7 +20,6 @@ const ShareFeed = props => {
             })
     }, [])
 
-    
 
     return (
         <div>

@@ -51,7 +51,7 @@ const Login = (props) => {
                     />
                 </label>
                 <button type="submit">Log In</button>
-                <Link to='/register'>New user?</Link>
+                <Link to='/signUp'>New user?</Link>
             </form>
         </div>
     )

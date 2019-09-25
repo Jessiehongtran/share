@@ -14,8 +14,8 @@ const SignUp = props => {
         axios
             .post('https://share-h.herokuapp.com/api/users/signup', person)
             .then(res => {
-                props.setId(res.data.id)
-                props.history.push('/login')
+                localStorage.setItem('userId', res.data.id)
+                props.history.push('/createProfile')
                 console.log('res in SignUp', res.data)
                 
             })

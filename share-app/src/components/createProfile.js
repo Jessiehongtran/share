@@ -9,7 +9,8 @@ const CreateProfile = props => {
     }
     const handleSubmit = e => {
         e.preventDefault();
-        profile.user_id = props.id
+        console.log(localStorage.getItem('userId'))
+        profile.user_id = localStorage.getItem('userId')
         console.log(profile)
         axios
             .post('https://share-h.herokuapp.com/api/users/profile', profile)

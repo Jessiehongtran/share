@@ -1,0 +1,9 @@
+
+{
+    "version": 2,
+    "name": "share",
+    "builds": [{ "src": "/package.json", "use": "@now/static-build", "config": {"distDir": "build"} }],
+    "routes": [
+        { "src": "/(.*)", "dest": "/$1" }
+    ]
+}

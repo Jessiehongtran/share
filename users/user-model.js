@@ -40,37 +40,15 @@ function createProfile(profile){
 
 function getShares(){
     return db('item')
-            .join('item_details', 'item.id', 'item_details.item_id')
-            .select('item_name', 'item_details.pickup', 'item_details.deadline', 'item_details.target' )
-            .join('user_item', 'item.id', 'user_item.item_id')
-            .join('user', 'user.id', 'user_item.user_id')
-            .select('user.username')
-            .join('category', 'category.id', 'item.category_id')
-            .select('category.category_name')
 }
 
-function addShare(item){
-    // const item = {
-    //     item_name: share.item_name,
-    //     category_id: share.category_id
-    // };
-    // console.log('item', item)
-    // const item_details = {
-    //     description: share.description,
-    //     pickup: share.pickup,
-    //     target: share.target,
-    //     deadline: share.deadline,
-    //     rules: share.rules,
-    //     item_id: item.id
-    // }
-    // console.log('item_details', item_details)
+function addShare(share){
     return db('item')
-           .insert(item)
+           .insert(share)
            .then(ids => {
                ({id: ids[0]})
-            //    db('item_details')
-            //    .insert(item_details)
-            //    .then(ids => ({id: ids[0]}))
+               console.log(ids)
+               console.log('id inside user model', id)
             })
 }
 

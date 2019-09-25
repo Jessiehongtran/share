@@ -27,7 +27,7 @@ server.get('/api/users', (req,res) => {
         })
 })
 
-//POST users for Login
+//POST users for SignUp
 server.post('/api/users/signup', (req,res)=> {
     const userData = req.body;
     console.log(userData)
@@ -125,7 +125,8 @@ server.post('/api/shares', (req,res) => {
     console.log('newShare',newShare)
     db.addShare(newShare)
         .then(share => {
-            res.status(200).json(share)
+            res.status(200).json({message: 'post a share successfully'})
+            
         })
         .catch(err => {
             res.status(500).json(err)

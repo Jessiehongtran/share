@@ -15,7 +15,7 @@ const CreateProfile = props => {
             .post('https://share-h.herokuapp.com/api/users/profile', profile)
             .then(res => {
                 console.log(res)
-                props.history.push('/shareFeed')
+                props.history.push('/')
             })
             .catch(err => console.log(err))
     }

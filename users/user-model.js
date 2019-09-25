@@ -40,6 +40,9 @@ function createProfile(profile){
 
 function getShares(){
     return db('item')
+            .join('user_item', 'item.id', 'user_item.item_id')
+            .join('user', 'user.id', 'user_item.user_id')
+            .select('item_name', 'pickup', 'deadline', 'target', 'user.username')
 }
 
 function addShare(share){

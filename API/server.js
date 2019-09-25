@@ -135,7 +135,7 @@ server.post('/api/shares', (req,res) => {
 
 //GET SHARES
 server.get('/api/shares', (req,res)=> {
-    //need to grab the category_id and include into 'item' table
+    //need to grab the category_id and include into 'item' table >> already indluded
     db.getShares()
         .then(shares => {
             res.status(200).json(shares)

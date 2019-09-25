@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "server": "nodemon index.js",
-    "build": "node build/build.js"
+    "server": "nodemon index.js"
   },
   "repository": {
     "type": "git",

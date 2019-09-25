@@ -45,11 +45,9 @@ function getShares(){
 function addShare(share){
     return db('item')
            .insert(share)
-           .then(ids => {
+           .then(ids => 
                ({id: ids[0]})
-               console.log(ids)
-               console.log('id inside user model', id)
-            })
+            )
 }
 
 function getCategory(){

@@ -124,8 +124,8 @@ server.post('/api/shares', (req,res) => {
     const newShare = req.body
     console.log('newShare',newShare)
     db.addShare(newShare)
-        .then(share => {
-            res.status(200).json({message: 'post a share successfully'})
+        .then(id => {
+            res.status(200).json(id)
             
         })
         .catch(err => {

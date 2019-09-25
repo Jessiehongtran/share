@@ -90,7 +90,7 @@ exports.up = function(knex) {
 exports.down = function(knex) {
   return knex.schema
                 .dropTableIfExists('user_item')
-                .dropTableIfExists('item_details')
+                // .dropTableIfExists('item_details')
                 .dropTableIfExists('item')
                 .dropTableIfExists('category')
                 .dropTableIfExists('user_profile')

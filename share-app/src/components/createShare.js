@@ -51,19 +51,19 @@ const CreateShare = props => {
                         onChange={handleChange}
                     />
                 </label>
-                <label>Whom you would like to share with?
-                    <input
-                        type="text"
-                        name="target"
-                        value={item.target}
-                        onChange={handleChange}
-                    />
-                </label>
                 <label>Where to handover?
                     <input
                         type="text"
                         name="pickup"
                         value={item.pickup}
+                        onChange={handleChange}
+                    />
+                </label>
+                <label>Whom you would like to share with?
+                    <input
+                        type="text"
+                        name="target"
+                        value={item.target}
                         onChange={handleChange}
                     />
                 </label>

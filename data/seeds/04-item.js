@@ -9,7 +9,7 @@ exports.seed = function(knex) {
           description: "Newly bought",
           pickup: "1000 Blossom River Way",
           target: "Mom",
-          deadline: 2019-10-01,
+          deadline: '2019-10-01',
           rules: "contact via phone please",
           category_id: 1
         }

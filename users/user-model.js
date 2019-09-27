@@ -74,3 +74,5 @@ function addCategory(cate){
             .insert(cate)
             .then(ids => ({id: ids[0]}))
 }
+
+

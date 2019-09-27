@@ -128,7 +128,18 @@ server.post('/api/category', (req,res)=> {
 server.post('/api/shares', (req,res) => {
     const newShare = req.body
     console.log('newShare',newShare)
-    db.addShare(newShare)
+    const item= {
+        item_name: newShare.item_name,
+        description: newShare.description,
+        pickup: newShare.pickup,
+        target: newShare.target,
+        deadline: newShare.deadline,
+        rules: newShare.rules,
+        category_id: newShare.category_id
+    }
+    console.log('item', item)
+    const user_id= newShare.user_id
+    db.addShare(item, user_id)
         .then(id => {
             res.status(200).json(id)
             

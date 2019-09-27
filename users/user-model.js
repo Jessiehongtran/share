@@ -47,11 +47,20 @@ function getShares(){
             .select('item_name', 'pickup', 'deadline', 'target', 'user.username')
 }
 
-function addShare(share){
+function addShare(item, user_id){
     return db('item')
-           .insert(share)
+           .insert(item)
            .then(ids => 
-               ({id: ids[0]})
+            //    ({id: ids[0]})
+            {
+                const idToAdd = {
+                    user_id: user_id,
+                    item_id: ids[0]
+                }
+                console.log(idToAdd)
+                return db('user_item')
+                        .insert(idToAdd)
+            }
             )
 }
 

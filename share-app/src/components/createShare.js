@@ -15,7 +15,9 @@ const CreateShare = props => {
         console.log(item)
         //push item_name to an API
         //push the rest to another API
+        const user_id = localStorage.getItem('userId')
         item.category_id=props.categoryId
+        item.user_id= user_id
         axios
             .post('https://share-h.herokuapp.com/api/shares', item)
             .then(res => {

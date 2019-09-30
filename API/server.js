@@ -128,14 +128,37 @@ server.post('/api/category', (req,res)=> {
 server.post('/api/shares', (req,res) => {
     const newShare = req.body
     console.log('newShare',newShare)
-    db.addShare(newShare)
+    const item= {
+        item_name: newShare.item_name,
+        description: newShare.description,
+        pickup: newShare.pickup,
+        target: newShare.target,
+        deadline: newShare.deadline,
+        rules: newShare.rules,
+        category_id: newShare.category_id
+    }
+    console.log('item', item)
+    const user_id= newShare.user_id
+    db.addItem(item)
         .then(id => {
-            res.status(200).json(id)
+            console.log('id 144', id)
+            const addToId = {
+                user_id: user_id,
+                item_id: id.id
+            }
+            db.addUserItem(addToId)
+            .then(id => res.status(200).json(id[0]))
+        })
+        
+    // db.addShare(item, user_id)
+    //     .then(id => {
+    //         console.log(id)
+    //         res.status(200).json(id)
             
-        })
-        .catch(err => {
-            res.status(500).json(err)
-        })
+    //     })
+    //     .catch(err => {
+    //         res.status(500).json(err)
+    //     })
 })
 
 //GET SHARES

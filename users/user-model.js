@@ -9,8 +9,10 @@ module.exports = {
     getCategory,
     addCategory,
     getShares,
-    addShare,
-    //updateShare
+    // addShare,
+    //updateShare,
+    addItem,
+    addUserItem
     
 }
 
@@ -47,13 +49,34 @@ function getShares(){
             .select('item_name', 'pickup', 'deadline', 'target', 'user.username')
 }
 
-function addShare(share){
+//add Item 
+function addItem(item) {
     return db('item')
-           .insert(share)
-           .then(ids => 
-               ({id: ids[0]})
-            )
+    .insert(item)
+    .then(ids => {
+        return {id: ids[0]}
+    })
 }
+
+//add user_item
+function addUserItem (idToAdd){
+    return db('user_item')
+    .insert(idToAdd)
+}
+
+
+function getUserAndStory(id) {
+    const userQuery = getUser(id);
+    const storiesQuery = getUserStories(id);
+    const country = getCountry(id);
+    return Promise.all([userQuery, storiesQuery, country]).then(
+      ([user, stories, country]) => {
+        user.stories = stories;
+        user.country = country;
+        return user;
+      }
+    );
+  }
 
 function getCategory(){
     return db('category')
@@ -65,3 +88,6 @@ function addCategory(cate){
             .insert(cate)
             .then(ids => ({id: ids[0]}))
 }
+
+
+

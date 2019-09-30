@@ -22,7 +22,7 @@ const Login = (props) => {
                 localStorage.setItem('token', res.data.token)
                 console.log(res.data)
                 localStorage.setItem('userId', res.data.user.id)
-                props.history.push('/')
+                props.history.push('/shareFeed')
             })
             .catch(err => {
                 console.log(err)
@@ -51,7 +51,7 @@ const Login = (props) => {
                     />
                 </label>
                 <button type="submit">Log In</button>
-                <Link to='/register'>New user?</Link>
+                <Link to='/signUp'>New user?</Link>
             </form>
         </div>
     )

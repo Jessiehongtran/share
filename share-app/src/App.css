@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  /* position: relative; */
   
 }
 
@@ -12,8 +13,30 @@ form {
 button{
   width: 10%;
   text-align: center;
-  margin-top: 10px;
+  margin: 5px;
+  background-color: DodgerBlue;
+  border: 0;
+  border-radius: 10px;
+  color: white;
+  font-size: 16px;
+  padding: 10px 3px 10px 3px;
+  position: absolute; 
+  right: 20px; 
+  top: 20px; 
 }
+
+/* .btn{
+  width: 10%;
+  text-align: center;
+  margin: 5px;
+  background-color: DodgerBlue;
+  border: 0;
+  border-radius: 10px;
+  color: white;
+  font-size: 16px;
+  padding: 10px 3px 10px 3px;
+  
+} */
 
 h1, p{
   color: DodgerBlue;

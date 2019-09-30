@@ -5,12 +5,15 @@ const Intro = () => {
 
     return (
         <div>
-            <Link to='/login'>
-                <button>Log In</button>
-            </Link>
-            <Link to='/signUp'>
-                <button>Sign Up</button>
-            </Link>
+            <div class="btn">
+                <Link to='/signUp'>
+                    <button>Sign Up</button>
+                </Link>
+                <Link to='/login'>
+                    <button>Log In</button>
+                </Link>
+                
+            </div>
             <h3>Hi there,</h3>
             <p>Have you ever wanted to share food, book, clothes, opportunities, etc</p> 
                 <p>to someone else but do not know who is in need of those?  </p>

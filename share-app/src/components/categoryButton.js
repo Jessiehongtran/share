@@ -4,7 +4,7 @@ const CategoryButton = props => {
     console.log('props in CategoryButton', props)
     return (
         <div>
-            <button onClick={click => 
+            <button class="cate-btn" onClick={click => 
             {console.log('check', props.cate)
                 if(props.cate === 'Others'){props.history.push('/addCategory')} 
                 else {

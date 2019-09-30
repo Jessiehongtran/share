@@ -7,6 +7,7 @@ import ChooseCategory from './components/chooseCate'
 import AddCategory from './components/addCategory'
 import CreateShare from './components/createShare'
 import ShareFeed from './components/shareFeed'
+import Intro from './components/intro'
 import './App.css'
 
 function App() {
@@ -19,35 +20,36 @@ function App() {
   return (
     <div className="App">
       <h1>Share</h1>
-      <Route exact path='/signUp' 
-      render={props => {
-        return <SignUp {...props}/>
-      }}/>
-      <Route exact path='/login' 
-        render={props => {
+        <Route exact path='/' component={Intro}/>
+        <Route exact path='/signUp' 
+          render={props => {
+          return <SignUp {...props}/>
+        }}/>
+        <Route exact path='/login' 
+          render={props => {
           return <Login {...props} />
         }}/>
-      <Route exact path='/createProfile' 
-        render={props => {
+        <Route exact path='/createProfile' 
+          render={props => {
           return <CreateProfile {...props}/>
         }} />
-      <Route exact path='/category' 
-        render={props => {
+        <Route exact path='/category' 
+          render={props => {
           return <ChooseCategory {...props} 
           setCategoryList={setCategoryList} 
           categoryList={categoryList}
           categoryId = {categoryId}
           setCategoryId = {setCategoryId}
           />
-        }}/>
-      <Route exact path='/addCategory' 
-        component={AddCategory} />
-      <Route path='/createShare' 
-        render={props => {
+          }}/>
+        <Route exact path='/addCategory' 
+          component={AddCategory} />
+        <Route path='/createShare' 
+          render={props => {
           return <CreateShare {...props} categoryId={categoryId}/>
         }} />
-      <Route exact path='/shareFeed'
-        render={props => {
+        <Route exact path='/shareFeed'
+          render={props => {
           return <ShareFeed {...props} 
           setShareList={setShareList} 
           shareList={shareList}/>

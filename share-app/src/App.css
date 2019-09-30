@@ -20,13 +20,11 @@ button{
   color: white;
   font-size: 16px;
   padding: 10px 3px 10px 3px;
-  position: absolute; 
-  right: 20px; 
-  top: 20px; 
+  
 }
 
-/* .btn{
-  width: 10%;
+.share-btn{
+  width: 15%;
   text-align: center;
   margin: 5px;
   background-color: DodgerBlue;
@@ -36,7 +34,36 @@ button{
   font-size: 16px;
   padding: 10px 3px 10px 3px;
   
-} */
+}
+
+.entry-btn{
+  width: 10%;
+  text-align: center;
+  margin: 5px;
+  background-color: DodgerBlue;
+  border: 0;
+  border-radius: 10px;
+  color: white;
+  font-size: 16px;
+  padding: 10px 3px 10px 3px;
+  position: absolute; 
+  right: 20px; 
+  top: 20px; 
+}
+
+.explore-btn{
+  width: 10%;
+  text-align: center;
+  margin: 5px;
+  background-color: Gold ;
+  border: 0;
+  border-radius: 10px;
+  color: black;
+  font-size: 16px;
+  padding: 10px 3px 10px 3px;
+  
+}
+
 
 h1, p{
   color: DodgerBlue;

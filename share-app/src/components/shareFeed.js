@@ -25,7 +25,7 @@ const ShareFeed = props => {
         <div>
         <Link to='/login'><button>Log In</button></Link>
         <Link to='/signUp'><button>Sign Up</button></Link>
-        <Link to='/category'><button>Want to share something?</button></Link>
+        <Link to='/category'><button class="share-btn">Start sharing</button></Link>
         {props.shareList.map(share => <ShareCard key={share} share={share}/>)}
         </div>
     )

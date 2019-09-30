@@ -7,10 +7,10 @@ const Intro = () => {
         <div>
             <div class="btn">
                 <Link to='/signUp'>
-                    <button>Sign Up</button>
+                    <button class="entry-btn">Sign Up</button>
                 </Link>
                 <Link to='/login'>
-                    <button>Log In</button>
+                    <button class="entry-btn">Log In</button>
                 </Link>
                 
             </div>

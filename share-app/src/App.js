@@ -19,7 +19,8 @@ function App() {
   //if shareFeed's router is set '/' as default, there should be authentication on the server
   return (
     <div className="App">
-      <h1>Share</h1>
+      <h1>Sharee</h1>
+      <h3 class="value">Relocate resources in society</h3>
       <Route exact path='/' 
           component={Intro}/>
       <Route exact path='/signUp' 

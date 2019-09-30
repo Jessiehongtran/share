@@ -3,6 +3,10 @@
   /* position: relative; */
   
 }
+.value{
+  color: DodgerBlue;
+  font-style: italic;
+}
 
 form {
   display: flex;

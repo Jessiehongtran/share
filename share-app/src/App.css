@@ -76,6 +76,10 @@ button{
   font-size: 16px;
   padding: 10px 3px 10px 3px;
 }
+.cate-btn:hover{
+  background-color: DodgerBlue;
+  color: white
+}
 
 h1, p{
   color: DodgerBlue;

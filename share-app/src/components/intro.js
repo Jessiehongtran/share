@@ -18,6 +18,7 @@ const Intro = () => {
             <p>Or have you ever wish someone have that resource for you </p>
                 <p>to borrow or use for a certain time instead of buying yourself?</p>
             <p>If answers to these questions are YES, welcome to Sharee. </p>
+            <p>And guess what, you do not really need to know someone to be able to share.</p>
             <h3>Sharee is created to relocate resources in society</h3>
         </div>
     )

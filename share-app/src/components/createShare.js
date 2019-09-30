@@ -29,7 +29,7 @@ const CreateShare = props => {
             })
 
         //push to shareFeed
-        props.history.push('/')
+        props.history.push('/shareFeed')
 
         //later on can add push to review, edit, delete
     }

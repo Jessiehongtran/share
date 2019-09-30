@@ -22,7 +22,7 @@ const Login = (props) => {
                 localStorage.setItem('token', res.data.token)
                 console.log(res.data)
                 localStorage.setItem('userId', res.data.user.id)
-                props.history.push('/')
+                props.history.push('/shareFeed')
             })
             .catch(err => {
                 console.log(err)

@@ -46,7 +46,7 @@ function App() {
         render={props => {
           return <CreateShare {...props} categoryId={categoryId}/>
         }} />
-      <Route exact path='/'
+      <Route exact path='/shareFeed'
         render={props => {
           return <ShareFeed {...props} 
           setShareList={setShareList} 

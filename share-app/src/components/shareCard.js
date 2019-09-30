@@ -9,7 +9,7 @@ const ShareCard = props => {
             <p className="share-text">Pickup at: {props.share.pickup}</p>
             <p className="share-text">Available until: {props.share.deadline}</p>
             <p className="share-text">Ideally for: {props.share.target}</p>
-            <button>Explore</button>
+            <button class="explore-btn">Explore</button>
         </div>
     )
 }

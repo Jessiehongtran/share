@@ -16,8 +16,9 @@ function App() {
   return (
     <div className="App">
       <div className="links">
-        <ToggleMenu/>
+        {/* <ToggleMenu/> */}
         <NavLink />
+        <h1>Hello</h1>
       </div>
     </div>
   );

@@ -1,11 +1,14 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
 
 const toggleMenu = () => {
-  const [toggleState, setToggleState] = useState("open");
+  // const [toggleState, setToggleState] = useState("open");
 
-  const toggle = () => {
-    setToggleState(toggleState === "open" ? "close" : "open");
-  };
+  // const toggle = () => {
+  //   setToggleState(
+  //     toggleState === 
+  //     "open" ? "close" : "open"
+  //     );
+  // };
 
   return (
     <div>
@@ -16,7 +19,7 @@ const toggleMenu = () => {
         />
         <h1>Share</h1>
       </div>
-      <div class={`menu ${toggleState}`} onClick={toggle}>
+      {/* <div class={`menu ${toggleState}`} onClick={toggle}> */}
         <ul>
           <li>A book</li>
           <li>A ride</li>
@@ -32,8 +35,8 @@ const toggleMenu = () => {
           <li>A business</li>
           <li>Others</li>
         </ul>
-      </div>
-    </div>
+      
+   </div> 
   );
 };
 
